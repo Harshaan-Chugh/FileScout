@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>dev.harshaan</groupId>
-	<artifactId>FileManagerFS</artifactId>
+	<artifactId>FileScoutFS</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>FileManagerFS</name>
+	<name>FileScoutFS</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>

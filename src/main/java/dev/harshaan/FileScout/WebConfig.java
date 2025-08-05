@@ -16,7 +16,7 @@ public class WebConfig implements WebMvcConfigurer {
                 .allowedOrigins(
                     "http://localhost:3001", 
                     "https://aquamarine-selkie-7ea2ff.netlify.app", 
-                    "https://filemanagerapp.harshaanc.dev" // Add https:// prefix
+                    "https://filescoutapp.harshaanc.dev" // Add https:// prefix
                 )
                 .allowedMethods("GET", "POST", "PUT", "DELETE")
                 .allowedHeaders("*")

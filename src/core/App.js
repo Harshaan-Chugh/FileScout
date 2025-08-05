@@ -1,10 +1,10 @@
 import React from 'react';
-import FileManager from '../frontend/components/FileManager';
+import FileScout from '../frontend/components/FileScout';
 
 function App() {
   return (
     <div className="App">
-      <FileManager />
+      <FileScout />
     </div>
   );
 }

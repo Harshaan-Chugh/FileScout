@@ -1,0 +1,304 @@
+/* Modern FileScout UI */
+.file-scout {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.file-scout h1 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: -0.025em;
+}
+
+.message {
+    text-align: center;
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    animation: slideIn 0.3s ease;
+}
+
+.message.success {
+    background: rgba(72, 187, 120, 0.2);
+    border-color: rgba(72, 187, 120, 0.3);
+}
+
+.message.error {
+    background: rgba(245, 101, 101, 0.2);
+    border-color: rgba(245, 101, 101, 0.3);
+}
+
+.message.info {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.column {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.column::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.column:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.column h2 {
+    color: #2d3748;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.column h2::before {
+    content: '📁';
+    font-size: 1.2rem;
+}
+
+.column p {
+    color: #718096;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.column input, .column textarea {
+    width: 100%;
+    padding: 1rem;
+    margin: 0.75rem 0;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #ffffff;
+    box-sizing: border-box;
+}
+
+.column input:focus, .column textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    transform: translateY(-1px);
+}
+
+.column textarea {
+    min-height: 100px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.column button {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.column button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+}
+
+.column button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.column button:disabled {
+    background: #a0aec0;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* File list styling */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+ul li {
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    background: #f7fafc;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+    transition: all 0.2s ease;
+}
+
+ul li:hover {
+    background: #edf2f7;
+    transform: translateX(4px);
+}
+
+ul li strong {
+    color: #2d3748;
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+ul li div {
+    color: #718096;
+    font-size: 0.9rem;
+    margin: 0.25rem 0;
+}
+
+/* Search results styling */
+.search-results {
+    margin-top: 1.5rem;
+}
+
+.search-results h3 {
+    color: #2d3748;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.search-results h3::before {
+    content: '🔍';
+}
+
+/* Word count results */
+.word-count-results {
+    margin-top: 1.5rem;
+}
+
+.word-count-results h3 {
+    color: #2d3748;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.word-count-results h3::before {
+    content: '📊';
+}
+
+.word-count-results ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #f7fafc, #edf2f7);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .file-scout {
+        padding: 1rem;
+    }
+    
+    .file-scout h1 {
+        font-size: 2rem;
+    }
+    
+    .row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .column {
+        padding: 1.5rem;
+    }
+}
+
+/* Loading animation for buttons */
+.column button.loading {
+    position: relative;
+    color: transparent;
+}
+
+.column button.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    border-right-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Enhanced icons for different sections */
+.column h2[class*="directory"]::before { content: '📂'; }
+.column h2[class*="create"]::before { content: '📝'; }
+.column h2[class*="delete"]::before { content: '🗑️'; }
+.column h2[class*="duplicate"]::before { content: '🔄'; }
+.column h2[class*="search"]::before { content: '🔍'; }
+.column h2[class*="count"]::before { content: '📊'; }
+.column h2[class*="write"]::before { content: '✏️'; }

@@ -65,7 +65,7 @@ Spring Boot + React app for super‑quick local file management:
     global:
       scrape_interval: 5s
     scrape_configs:
-      - job_name: "file-manager"
+      - job_name: "filescout"
         metrics_path: "/actuator/prometheus"
         static_configs:
           - targets: ["localhost:8080"]
